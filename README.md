@@ -8,8 +8,8 @@ Version of Services
 | **Service** | **Version** |
 |-------------|-------------|
 | Nginx       |             |
-| MySQL       |             |
-| PHP         |   8.1       |
+| MySQL       |   8.0.32    |
+| PHP         |   8.1.18    |
 | Node        |             |
 | Composer    |             |
 | NPM         |             |
@@ -67,16 +67,17 @@ sudo apt install mysql-server -y
 
 sudo mysql
 ````
+ 
 ```mysql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'i6EuP9RmO41$';
 
 exit;
-````
+```
 ````bash
 sudo mysql_secure_installation
 ````
-Press all Enter this not important if you want to read and press you want you are free to make
-
+**Press all Enter this not important if you want to read and press you want you are free to make**
+<hr>
 This part if for laravel because i create the database and the user for laravel you can skip this part if you don't need database bacuse you already you have
 
 ```bash
@@ -86,21 +87,26 @@ mysql -u root -p
 Change the name of database and the user , password with your own database name , user and password:
 
 ```mysql
-CREATE DATABASE yourdatabase;
+CREATE DATABASE marco;
 
 use marco;
 
-CREATE USER username@'%' IDENTIFIED BY 'yourpassword';
+CREATE USER marco@'%' IDENTIFIED BY 'i6EuP9RmO41$';
 
-GRANT ALL ON yourdatabase.* TO username@'%';
+GRANT ALL ON marco.* TO marco@'%';
 
 FLUSH PRIVILEGES;
+
+SHOW DATABASES;
+
+EXIT;
 ```
+
+
 Check 
 ```bash
-mysql -v
-sudo systemctl status myslq-server
-
+mysql -V
+sudo systemctl status mysql.service
 ```
 
 
@@ -111,7 +117,7 @@ Now you install Composer the packet manager for laravel you can install with 3 m
 
 - Method 1
 
-  With the git repo:
+  With the git repo version 2.2.6:
   ```bash
   sudo apt-get install git composer -y
   ```
@@ -124,7 +130,7 @@ Now you install Composer the packet manager for laravel you can install with 3 m
   curl -sS https://getcomposer.org/installer | php 
   ```
   
-- Method 3
+- Method 3 (recommend)
 
   The official install of composer web this check is has the same hash_file
 
@@ -137,7 +143,7 @@ Now you install Composer the packet manager for laravel you can install with 3 m
 
   ```
 
-When you install with one of this method then you need to put in bin for gobally composer: 
+When you install with one of this method then you need to put in bin for gobally composer if you install git method you don't need this step: 
 
 ```bash
 sudo mv composer.phar /usr/local/bin/composer
@@ -158,11 +164,11 @@ If you install follow the next step:
 You install node 12 in the first instalation:
 
 ```bash
-sudo apt install nodejs
-sudo apt install npm
+sudo apt install nodejs -y
+sudo apt install npm -y
 ```
 
-This for install node 12 to node 18 maybe you have and error:
+This for install node 12 to node 18 maybe you have one error:
 
 ```bash
 sudo apt install -y curl
@@ -197,24 +203,25 @@ Install Nginx
 sudo apt install nginx
 
 
+# Reference notes and notes help me
 
-https://askubuntu.com/questions/1062171/dpkg-deb-error-paste-subprocess-was-killed-by-signal-broken-pipe
+- https://askubuntu.com/questions/1062171/dpkg-deb-error-paste-subprocess-was-killed-by-signal-broken-pipe
 
-https://joshtronic.com/2022/04/24/how-to-install-nodejs-18-on-ubuntu-2004-lts/
+- https://joshtronic.com/2022/04/24/how-to-install-nodejs-18-on-ubuntu-2004-lts/
 
-https://alfaexploit.com/es/posts/you_are_not_allowed_to_create_a_user_with_grant/
+- https://alfaexploit.com/es/posts/you_are_not_allowed_to_create_a_user_with_grant/
 
-https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
+- https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
 
-https://stackoverflow.com/questions/50177216/how-to-grant-all-privileges-to-root-user-in-mysql-8-0
+- https://stackoverflow.com/questions/50177216/how-to-grant-all-privileges-to-root-user-in-mysql-8-0
 
-https://www.iankumu.com/blog/how-to-deploy-a-laravel-app-on-lemp-stack/
+- https://www.iankumu.com/blog/how-to-deploy-a-laravel-app-on-lemp-stack/
 
-https://techvblogs.com/blog/deploy-laravel-project-nginx-ubuntu
+- https://techvblogs.com/blog/deploy-laravel-project-nginx-ubuntu
 
-https://arnoldfederis.medium.com/how-to-install-lemp-stack-and-deploy-your-laravel-application-in-digitalocean-ubuntu-20-04-67c66cc2275c
+- https://arnoldfederis.medium.com/how-to-install-lemp-stack-and-deploy-your-laravel-application-in-digitalocean-ubuntu-20-04-67c66cc2275c
 
-https://qirolab.com/posts/how-to-install-laravel-with-lemp-stack-on-ubuntu-1604490338
+- https://qirolab.com/posts/how-to-install-laravel-with-lemp-stack-on-ubuntu-1604490338
 
 
 
