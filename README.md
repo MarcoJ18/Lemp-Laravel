@@ -295,6 +295,7 @@ php artisan --version
 - https://qirolab.com/posts/how-to-install-laravel-with-lemp-stack-on-ubuntu-1604490338
 - https://medium.com/in-laravel/how-to-install-upgrade-or-downgrade-a-specific-version-of-laravel-717bb1ba9ae6
 - https://tinkerwell.app/blog/how-to-check-the-laravel-version-of-your-application#:~:text=Every%20Laravel%20release%20has%20the,via%20the%20app()%20helper.&text=If%20you%20don%27t%20want,and%20run%20it%20from%20there.
+- https://laravel.com/docs/10.x/deployment
 
 
 
