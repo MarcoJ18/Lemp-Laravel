@@ -10,9 +10,9 @@ Version of Services
 | Nginx       |             |
 | MySQL       |   8.0.32    |
 | PHP         |   8.1.18    |
-| Node        |             |
-| Composer    |             |
-| NPM         |             |
+| Node        |   16.20.0   |
+| Composer    |   2.5.5     |
+| NPM         |   8.19.4    |
 
 
 
@@ -47,6 +47,13 @@ If you need and use <b>php the lastest version</b> install this packet:
 ```bash
 sudo apt install php-json
 ```
+
+Change files:
+
+```bash
+ sudo nano /etc/php/8.1/fpm/php.ini
+```
+
 
 Check
 ```bash
@@ -168,17 +175,17 @@ sudo apt install nodejs -y
 sudo apt install npm -y
 ```
 
-This for install node 12 to node 18 maybe you have one error:
+This for install node 12 to node 16 maybe you have one error:
 
 ```bash
 sudo apt install -y curl
 
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 ```
 
 To solve this error you need to use this:
 ```bash
-sudo dpkg -i --force-overwrite /var/cache/apt/archives/nodejs_18.16.0-deb-1nodesource1_amd64.deb
+sudo dpkg -i --force-overwrite /var/cache/apt/archives/nodejs_16.20.0-deb-1nodesource1_amd64.deb
 
 sudo apt -f install
 
@@ -191,16 +198,60 @@ node -v
 npm -v
 ```
 
+Install Nginx
+-------------
+
+```bash
+sudo apt install nginx -y
+
+sudo nano /etc/nginx/sites-available/default
+ 
+```
+Delete All and put this:
+
+```bash
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name marco.com;
+    root /var/www/marco/public;
+ 
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+ 
+    index index.php;
+ 
+    charset utf-8;
+ 
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+ 
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+ 
+    error_page 404 /index.php;
+ 
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+ 
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+
+````
 
 
 Install Laravel
 ---------------
 
 
-Install Nginx
--------------
 
-sudo apt install nginx
 
 
 # Reference notes and notes help me
