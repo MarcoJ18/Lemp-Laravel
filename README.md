@@ -7,12 +7,13 @@ Version of Services
 
 | **Service** | **Version** |
 |-------------|-------------|
-| Nginx       |             |
+| Nginx       |   1.18.0    |
 | MySQL       |   8.0.32    |
 | PHP         |   8.1.18    |
 | Node        |   16.20.0   |
 | Composer    |   2.5.5     |
 | NPM         |   8.19.4    |
+| Laravel     |   9.52.7    |
 
 
 
@@ -211,7 +212,6 @@ Install Nginx
 sudo apt install nginx -y
 
 sudo nano /etc/nginx/sites-available/default
- 
 ```
 Delete All and put this:
 
@@ -252,11 +252,33 @@ server {
 
 ````
 
+Check version
+```bash
+nginx -v
+```
+
+
 
 Install Laravel
 ---------------
 
+```bash
+cd /var/www/
 
+sudo composer create-project laravel/laravel marco 9.*
+
+sudo chown -R www-data:www-data /var/www/marco
+
+sudo chmod -R 775 /var/www/marco/storage
+
+sudo systemctl reload nginx.service
+```
+Check version
+```bash
+cd /var/www/marco
+
+php artisan --version
+```
 
 
 
