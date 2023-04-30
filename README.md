@@ -50,8 +50,13 @@ sudo apt install php-json
 
 Change files:
 
+
 ```bash
- sudo nano /etc/php/8.1/fpm/php.ini
+ sudo apt install git -y
+ sudo git clone git@github.com:MarcoJ18/Lemp-Laravel.git
+ cd Lemp-Laravel
+ sudo rm README.md
+ sudo mv php.ini /etc/php/8.1/fpm/php.ini
 ```
 
 
