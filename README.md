@@ -285,22 +285,16 @@ php artisan --version
 # Reference notes and notes help me
 
 - https://askubuntu.com/questions/1062171/dpkg-deb-error-paste-subprocess-was-killed-by-signal-broken-pipe
-
 - https://joshtronic.com/2022/04/24/how-to-install-nodejs-18-on-ubuntu-2004-lts/
-
 - https://alfaexploit.com/es/posts/you_are_not_allowed_to_create_a_user_with_grant/
-
 - https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
-
 - https://stackoverflow.com/questions/50177216/how-to-grant-all-privileges-to-root-user-in-mysql-8-0
-
 - https://www.iankumu.com/blog/how-to-deploy-a-laravel-app-on-lemp-stack/
-
 - https://techvblogs.com/blog/deploy-laravel-project-nginx-ubuntu
-
 - https://arnoldfederis.medium.com/how-to-install-lemp-stack-and-deploy-your-laravel-application-in-digitalocean-ubuntu-20-04-67c66cc2275c
-
 - https://qirolab.com/posts/how-to-install-laravel-with-lemp-stack-on-ubuntu-1604490338
+- https://medium.com/in-laravel/how-to-install-upgrade-or-downgrade-a-specific-version-of-laravel-717bb1ba9ae6
+- https://tinkerwell.app/blog/how-to-check-the-laravel-version-of-your-application#:~:text=Every%20Laravel%20release%20has%20the,via%20the%20app()%20helper.&text=If%20you%20don%27t%20want,and%20run%20it%20from%20there.
 
 
 
