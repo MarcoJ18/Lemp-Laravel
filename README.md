@@ -74,7 +74,7 @@ Install MySQL
 
 Install MySQL with a segure password if you want to use a not secure password then need to change the security of mysql
 
- - Password Example: **i6EuP9RmO41$** 
+ - Password Example: **password$** 
 
 ```bash
 sudo apt install mysql-server -y
@@ -83,7 +83,7 @@ sudo mysql
 ````
  
 ```mysql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'i6EuP9RmO41$';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 
 exit;
 ```
