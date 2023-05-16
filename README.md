@@ -83,7 +83,7 @@ sudo mysql
 ````
  
 ```mysql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password$';
 
 exit;
 ```
@@ -105,7 +105,7 @@ CREATE DATABASE marco;
 
 use marco;
 
-CREATE USER marco@'%' IDENTIFIED BY 'i6EuP9RmO41$';
+CREATE USER marco@'%' IDENTIFIED BY 'password$';
 
 GRANT ALL ON marco.* TO marco@'%';
 
